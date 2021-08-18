@@ -23,7 +23,11 @@ const MapCarousel: React.FC<MapCarouselProps> = ({ locations, onSlideLocation, c
     return (
         <FlatList
             data={locations}
-            renderItem={({ item }) => <CarouselSlide location={item}/>}
+            renderItem={({ item }) => {
+                return (
+                    <CarouselSlide location={item}/>
+                );
+            }}
             pagingEnabled
             horizontal
             showsHorizontalScrollIndicator={false}

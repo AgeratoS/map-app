@@ -4,6 +4,21 @@ import MapView from "../components";
 import { useLocalStorage } from "../../common/hooks/useLocalStorage";
 import { LocationItem } from "../../common/types";
 
+const localLocations: Array<LocationItem> = [
+    {
+        location: "ABC",
+        address: "DEF",
+    },
+    {
+        location: "DDD",
+        address: "FSS",
+    },
+    {
+        location: "FDSDF",
+        address: "MKDS",
+    }
+]
+
 const Map: React.FC = () => {
 
     const [locations] = useLocalStorage<LocationItem[]>("locations", []);
@@ -13,7 +28,7 @@ const Map: React.FC = () => {
             <MapView
                 activeMarker={null}
                 currentLocation={0}
-                locations={locations}
+                locations={localLocations}
                 markers={null}
                 onSlideLocation={() => {}}
             />
